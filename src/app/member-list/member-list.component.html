@@ -1,0 +1,30 @@
+<div>
+  <ul class="tree-view">
+    <li><span>Member List</span>
+    <ul>
+    <li *ngFor="let person of personList" (click)="onSelectPerson(person)">
+      {{ person.name }} ({{ person.preferredPosition }})
+    </li></ul>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedPerson">
+    <h5>{{ isNewPerson ? 'Add New Person' : 'Edit Person' }}</h5>
+    <label>Name:</label>
+    <input [(ngModel)]="selectedPerson.name" />
+
+    <label>Preferred Position:</label>
+    <select [(ngModel)]="selectedPerson.preferredPosition">
+      <option [value]="position" *ngFor="let position of positionValues">{{ position }}</option>
+    </select>
+    <label>
+      Maximum Shifts: <input type="number" [(ngModel)]="selectedPerson.maximumShifts" />
+    </label>
+
+    <button (click)="onSavePerson()">Save</button>
+    <button (click)="deletePerson()">Delete</button>
+    <button (click)="selectedPerson = null">Cancel</button>
+  </div>
+
+  <button (click)="onAddNewPerson()">Add New Person</button>
+</div>

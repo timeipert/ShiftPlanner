@@ -1,0 +1,72 @@
+<div class="availability-form">
+  <h4>Availability on {{month}}.{{year}}</h4>
+  <select (change)="onSelectPerson(selectedPersonInput.value)" #selectedPersonInput>
+    <option>Wer?</option>
+    <option *ngFor="let person of personList" [value]="person.id">{{ person.name }}</option>
+  </select>
+
+  <div *ngIf="selectedPerson" class="person-availability">
+    <h4>{{ selectedPerson.name }}</h4>
+    <table class="interactive">
+      <thead>
+      <tr>
+        <th colspan="2">-</th>
+        <th >Morning</th>
+        <th >Afternoon</th>
+        <th >Evening</th>
+      </tr></thead>
+      <tbody>
+      <tr *ngFor="let day of calendarDays">
+        <td>{{ day.date | date:'d' }}</td>
+        <td>{{ day.date | date:'EE' }}</td>
+        <td>
+          <button [ngStyle]="{'background-color': isAvailable(day.date, selectedPerson, ShiftType.Morning) === Availability.Yes ? 'green' : 'red'}"
+                  (click)="onSaveAvailability(day.date, selectedPerson, ShiftType.Morning,
+                  isAvailable(day.date, selectedPerson, ShiftType.Morning) === Availability.Yes ? Availability.No : Availability.Yes
+                  )"
+          >
+            {{ isAvailable(day.date, selectedPerson, ShiftType.Morning) === Availability.Yes ? 'Yes' : 'No' }}
+          </button>
+
+        </td>
+        <td>
+          <button [ngStyle]="{'background-color': isAvailable(day.date, selectedPerson, ShiftType.Afternoon) === Availability.Yes ? 'green' : 'red'}"
+                  (click)="onSaveAvailability(day.date, selectedPerson, ShiftType.Afternoon,
+                  isAvailable(day.date, selectedPerson, ShiftType.Afternoon) === Availability.Yes ? Availability.No : Availability.Yes
+                  )"
+          >
+            {{ isAvailable(day.date, selectedPerson, ShiftType.Afternoon) === Availability.Yes ? 'Yes' : 'No' }}
+          </button>
+        </td>
+        <td>
+          <button [ngStyle]="{'background-color': isAvailable(day.date, selectedPerson, ShiftType.Evening) === Availability.Yes ? 'green' : 'red'}"
+                  (click)="onSaveAvailability(day.date, selectedPerson, ShiftType.Evening,
+                  isAvailable(day.date, selectedPerson, ShiftType.Evening) === Availability.Yes ? Availability.No : Availability.Yes
+                  )"
+          >
+            {{ isAvailable(day.date, selectedPerson, ShiftType.Evening) === Availability.Yes ? 'Yes' : 'No' }}
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="itstime" [ngStyle]="{'display': isAfter14th() ? 'block' : 'none' }">
+  <div class="window" style="width: 300px">
+    <div class="title-bar">
+      <div class="title-bar-text">Error</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <h3 class="blink-red">Achtung!!</h3>
+      <img src="assets/esistzeit.png">
+    </div>
+  </div>
+</div>

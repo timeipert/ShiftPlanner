@@ -1,0 +1,41 @@
+
+<div class="window">
+  <div class="title-bar inactive">
+    <div class="title-bar-text">KULT 2000</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <menu role="tablist">
+      <li class="nav-item" role="tab" routerLinkActive="selected">
+        <a routerLink="/shift-plan" class="nav-link" role="button" >
+          <span class="nav-link-inner-text">Shift Plan</span>
+        </a>
+      </li>
+      <li class="nav-item" role="tab" routerLinkActive="selected">
+        <a routerLink="/member-list" class="nav-link"
+           role="button">
+                <span
+                  class="nav-link-inner-text">Member List</span>
+        </a>
+      </li>
+      <li class="nav-item" role="tab" routerLinkActive="selected">
+        <a routerLink="/availability-form" class="nav-link"
+           role="button">
+                <span
+                  class="nav-link-inner-text">Availability Form</span>
+        </a>
+      </li>
+    </menu>
+
+
+  <div class="window" role="tabpanel">
+    <div class="window-body">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>
+</div>

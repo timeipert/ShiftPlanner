@@ -1,0 +1,47 @@
+table {
+  width: 80vw;
+}
+h2 {
+  font-size: 1.3em;
+  display: inline;
+  margin: 0 1em;
+}
+
+tbody td {
+  border: 1px dotted grey;
+}
+.selected a {
+  margin: 0 0.5em;
+  color: #3068ff;
+}
+.selected {
+  border: 1px dashed #3068ff;
+}
+
+.selected {
+  background-color: #A1CCD1;
+  color: white;
+}
+
+.position-warning {
+  background-color: #E9B384; /* Amber */
+}
+
+.active_person {
+  color: #000000;
+  font-weight: bold;
+}
+.hildegard {
+  position: absolute;
+  top: 100px;
+  left: -200px;
+}
+.hildegard img {
+  width: 200px;
+}
+.nolink {
+  color: black;
+}
+.overshifted {
+  background: yellow;
+}

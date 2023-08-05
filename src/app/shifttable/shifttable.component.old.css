@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: #A1CCD1; /* Blue */
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #A1CCD1;
+}
+
+.month-year-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.month-year-selector h2 {
+  margin: 0 20px;
+}
+
+.shift-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shift-table th, .shift-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.shift-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.shift-table tr:hover {
+  background-color: #ddd;
+}
+
+.shift-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F4F2DE;
+  color: black;
+}
+
+.selected {
+  background-color: #A1CCD1;
+  color: white;
+}
+
+.position-warning {
+  background-color: #E9B384; /* Amber */
+}
+
+.active_person {
+  color: #000000;
+  font-weight: bold;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.selected a {
+  margin: 0 0.5em;
+  color: #3068ff;
+}
+.selected {
+  border: 1px dashed #3068ff;
+}

@@ -1,0 +1,8 @@
+menu[role=tablist]>li.selected {
+  background-color: silver;
+  margin-left: -3px;
+  margin-top: -2px;
+  padding-bottom: 2px;
+  position: relative;
+  z-index: 8;
+}

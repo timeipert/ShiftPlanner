@@ -1,0 +1,23 @@
+.itstime {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+
+.itstime img {
+  width: 250px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Apply the blinking animation to the .blink-red class */
+.blink-red {
+  animation: blink 1s infinite; /* The animation will repeat indefinitely */
+  color: red;
+}
+
